@@ -11,7 +11,10 @@ class Minesweeper:
         self.solution = [[0 for x in range(0, size)] for y in range(0, size)]
 
     def printBoard(self):
-        print("  0123456789\n")
+        print("  ", end="")
+        for i in range(0, len(self.board)):
+           print(i, end="")
+        print("")
         for i in range(0, self.size):
             print(i, end=" ")
             for j in range(0, self.size):
