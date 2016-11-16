@@ -40,14 +40,14 @@ class Minesweeper:
     def processMove(self, x, y):
         if not self.firstDone:
             self.firstDone = True
-            for i in range(0, self.numBombs):
+            i = 0
+            while i < self.numBombs:
                 bx = randint(0, self.size-1)
                 by = randint(0, self.size-1)
-                if((bx == x and by == y) or self.solution[bx][by] == -1):
-                    i = i - 1
-                else:
+                if((bx != x and by != y) and self.solution[bx][by] != -1):
                     self.solution[bx][by] = -1
                     self.processSurroundings(bx, by)
+                    i = i + 1
             return self.reveal(x, y)
         else:
             return self.reveal(x, y)
@@ -97,3 +97,6 @@ class Minesweeper:
             returnVal = True
 
         return returnVal
+
+    def returnBoard(self):
+        return self.board
