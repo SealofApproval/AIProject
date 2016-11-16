@@ -23,8 +23,7 @@ class AIMinesweeper:
             if value == 1.0 and self.board[x][y] != "F":
                return ["f", x, y]
             elif value < minProb and self.board[x][y] == "X":
-               print("here: (" + str(x) + ", " + str(y)+ ") " + str(value) + " " + str(minProb))
-               minprob = value
+               minProb = value
                moves = [["m", x, y]]
             elif value == minProb and self.board[x][y] == "X":
                moves.append(["m", x, y])
