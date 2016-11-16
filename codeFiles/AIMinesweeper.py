@@ -19,7 +19,6 @@ class AIMinesweeper:
                value = self.defaultProb
             else:
                value = self.probBoard[x][y]
-
             if value == 1.0 and self.board[x][y] != "F":
                return ["f", x, y]
             elif value < minProb and self.board[x][y] == "X":
@@ -44,6 +43,7 @@ class AIMinesweeper:
             elif self.board[x][y] != "X":
                s = 0
                f = 0
+               self.probBoard[x][y] = 0.0
                if self.board[x][y] == " ":
                   m = 0
                else:
@@ -87,7 +87,7 @@ class AIMinesweeper:
                f = f + 1
             if self.board[x][y] == "X":
                z = z + 1
-      self.defaultProb = (self.numBombs - f)/ x
+      self.defaultProb = (self.numBombs - f)/ z
 
    def printProbBoard(self):
       for x in range(0, self.size):

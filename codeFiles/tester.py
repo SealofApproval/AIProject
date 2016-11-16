@@ -11,7 +11,7 @@ while play:
    game = Minesweeper(numBombs, size)
    game.printBoard()
    player = AIMinesweeper(game.returnBoard(), size, numBombs)
-   while cont: 
+   while cont:
       move = player.getMove()
       if move[0] == "m":
          cont = game.processMove(move[1], move[2])
