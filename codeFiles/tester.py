@@ -32,7 +32,6 @@ while play:
    if win:
       print("Congrats! You won the Game!")
    else:
-      player.printProbBoard()
       print("Oh No! You encountered a bomb!")
    choice = input("Would you like to play again? (y or n): ")
    if choice == "n":

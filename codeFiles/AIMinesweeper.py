@@ -88,10 +88,3 @@ class AIMinesweeper:
             if self.board[x][y] == "X":
                z = z + 1
       self.defaultProb = (self.numBombs - f)/ z
-
-   def printProbBoard(self):
-      for x in range(0, self.size):
-         for y in range(0, self.size):
-            print(self.probBoard[x][y], end="")
-         print("")
-
