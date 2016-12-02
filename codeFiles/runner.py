@@ -4,8 +4,8 @@ from AIMinesweeper import *
 play = True
 cont = True
 win = False
-sizes = [5, 5, 5]
-bombs = [4, 5, 6]
+sizes = [20, 20, 20, 10, 20, 20, 20, 10, 10, 5, 5, 10, 10, 10, 10, 10]
+bombs = [5, 10, 15, 5, 20, 25, 30, 10, 15, 4, 5, 20, 25, 30, 35, 40]
 counter = 0
 trials = 0
 wins = 0
@@ -41,7 +41,7 @@ while counter < len(sizes):
       fails = fails + 1
    cont = True
    trials = trials + 1
-   if trials == 25:
+   if trials == 100:
       print("Wins: " + str(wins))
       print("Losses: " + str(fails))
       trials = 0

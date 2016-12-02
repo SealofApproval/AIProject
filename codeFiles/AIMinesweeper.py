@@ -78,7 +78,7 @@ class AIMinesweeper:
                            value = self.probBoard[f][g]
                         if prob > value:
                            self.probBoard[f][g] = prob
-                  
+
       f = 0
       z = 0
       for x in range(0, self.size):
