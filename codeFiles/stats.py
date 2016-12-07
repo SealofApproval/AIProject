@@ -6,13 +6,15 @@ class stats:
         self.fourthList = []
 
     def add(self, wins, losses, size, numBombs):
-        if (numBombs/(size * size)) * 100 < 10:
+        if (numBombs/(size * size)) * 100 <= 10:
             self.firstList.append([wins, losses])
-        elif (numBombs/(size * size)) * 100 < 20:
+        elif (numBombs/(size * size)) * 100 <= 20:
             self.secondList.append([wins, losses])
-        elif (numBombs/(size * size)) * 100 < 30:
+        elif (numBombs/(size * size)) * 100 <= 30:
+            print(size)
+            print(numBombs)
             self.thirdList.append([wins, losses])
-        elif (numBombs/(size * size)) * 100 < 40:
+        elif (numBombs/(size * size)) * 100 <= 40:
             self.fourthList.append([wins,losses])
         else:
             print("No list exists to hold this")
@@ -21,7 +23,7 @@ class stats:
         print("")
         print("______________________________________________")
         print("")
-        print("Map bomb %: 0 <= x < 10")
+        print("Map bomb %: 0 < x <= 10")
         if len(self.firstList) == 0:
             print("Average success rate: N/A")
         else:
@@ -31,7 +33,7 @@ class stats:
                 totalwins = totalwins + self.firstList[i][0]
                 totalgames = totalgames + self.firstList[i][1] + self.firstList[i][0]
             print("Average success rate: " + str((totalwins/totalgames) * 100))
-        print("Map bomb %: 10 <= x < 20")
+        print("Map bomb %: 10 < x <= 20")
         if len(self.secondList) == 0:
             print("Average success rate: N/A")
         else:
@@ -41,7 +43,7 @@ class stats:
                 totalwins = totalwins + self.secondList[i][0]
                 totalgames = totalgames + self.secondList[i][1] + self.secondList[i][0]
             print("Average success rate: " + str((totalwins/totalgames) * 100))
-        print("Map bomb %: 20 <= x < 30")
+        print("Map bomb %: 20 < x <= 30")
         if len(self.thirdList) == 0:
             print("Average success rate: N/A")
         else:
@@ -51,7 +53,7 @@ class stats:
                 totalwins = totalwins + self.thirdList[i][0]
                 totalgames = totalgames + self.thirdList[i][1] + self.thirdList[i][0]
             print("Average success rate: " + str((totalwins/totalgames) * 100))
-        print("Map bomb %: 30 <= x < 40")
+        print("Map bomb %: 30 < x <= 40")
         if len(self.fourthList) == 0:
             print("Average success rate: N/A")
         else:
