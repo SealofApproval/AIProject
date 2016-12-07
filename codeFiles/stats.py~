@@ -1,0 +1,20 @@
+class stats:
+    def __init__(self):
+        self.0to10list = []
+        self.10to20list = []
+        self.20to30list = []
+        self.30to40list = []
+    
+    def add(self, wins, losses, size, numBombs):
+        if (size * size)/numBombs <= 10:
+            self.0to10list.append([wins, losses])
+        elif (size * size)/numBombs <= 20:
+            self.10to20list.append([wins, losses])
+        elif (size * size)/numBombs <= 30:
+            self.20to30list.append([wins, losses])
+        elif (size * size)/numBombs <= 40:
+            self.30to40list.append([wins,losses])
+        else:
+            print("No list exists to hold this")
+
+    def printStats(self)

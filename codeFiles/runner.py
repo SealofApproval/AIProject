@@ -1,15 +1,17 @@
 from Minesweeper import *
 from AIMinesweeper import *
+from stats import *
 
 play = True
 cont = True
 win = False
-sizes = [20, 20, 20, 10, 20, 20, 20, 10, 10, 5, 5, 10, 10, 10, 10, 10]
-bombs = [5, 10, 15, 5, 20, 25, 30, 10, 15, 4, 5, 20, 25, 30, 35, 40]
+sizes = [5, 5, 10, 10, 10, 10, 10, 10]
+bombs = [4, 5, 5, 10, 15, 20, 25, 30]
 counter = 0
 trials = 0
 wins = 0
 fails = 0
+stat = stats()
 
 while counter < len(sizes):
    game = Minesweeper(bombs[counter], sizes[counter])
@@ -41,15 +43,18 @@ while counter < len(sizes):
       fails = fails + 1
    cont = True
    trials = trials + 1
-   if trials == 100:
+   if trials == 25:
+      print("Size of map: " + str(sizes[counter]*sizes[counter]))
+      print("Number of bombs: " + str(bombs[counter]))
       print("Wins: " + str(wins))
       print("Losses: " + str(fails))
+      stat.add(wins, fails, sizes[counter], bombs[counter])
       trials = 0
       wins = 0
       fails = 0
       counter = counter + 1
       waste = input("Hit enter to continue")
-   
-   
-   
+
+stat.printStats()
+
 input('Press Enter to exit')
