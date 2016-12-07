@@ -43,7 +43,7 @@ while counter < len(sizes):
       fails = fails + 1
    cont = True
    trials = trials + 1
-   if trials == 25:
+   if trials == 10:
       print("Size of map: " + str(sizes[counter]*sizes[counter]))
       print("Number of bombs: " + str(bombs[counter]))
       print("Wins: " + str(wins))
